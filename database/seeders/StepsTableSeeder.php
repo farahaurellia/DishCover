@@ -10,10 +10,10 @@ class StepsTableSeeder extends Seeder
 {
     public function run()
     {
-        DB::table('langkah_pembuatan')->insert([
-            ['resep_id' => 1, 'nomor_urut' => 1, 'deskripsi_langkah' => 'Panaskan minyak dalam wajan'],
-            ['resep_id' => 1, 'nomor_urut' => 2, 'deskripsi_langkah' => 'Tumis bawang putih dan bawang merah hingga harum'],
-            ['resep_id' => 1, 'nomor_urut' => 3, 'deskripsi_langkah' => 'Masukkan telur, buat orak-arik'],
+        DB::table('steps')->insert([
+            ['recipe_id' => 1, 'nomor_urut' => 1, 'deskripsi_langkah' => 'Panaskan minyak dalam wajan'],
+            ['recipe_id' => 1, 'nomor_urut' => 2, 'deskripsi_langkah' => 'Tumis bawang putih dan bawang merah hingga harum'],
+            ['recipe_id' => 1, 'nomor_urut' => 3, 'deskripsi_langkah' => 'Masukkan telur, buat orak-arik'],
             // Add the rest of the steps entries here...
         ]);
     }

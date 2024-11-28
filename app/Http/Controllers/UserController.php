@@ -21,11 +21,10 @@ class UserController extends Controller
     
         $incomingFields['password'] = bcrypt($incomingFields['password']);
     
-        #session()->put('user', $incomingFields);
+        $user = User::create($incomingFields);
+        auth()->login($user);
     
-        #session()->put('logged_in', true);
-    
-        return view('/homepage');
+        return view('/homepage')->with('success', 'You have succesfully created an account');
     }
 
     public function showHomepage(){

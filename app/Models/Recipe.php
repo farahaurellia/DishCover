@@ -2,7 +2,11 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory; 
+use App\Models\User;
+use App\Models\Ingredient;
 use Illuminate\Database\Eloquent\Model;
+
 
 class Recipe extends Model
 {

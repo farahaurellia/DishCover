@@ -10,10 +10,10 @@ class LikeTableSeeder extends Seeder
 {
     public function run()
     {
-        DB::table('like_resep')->insert([
-            ['user_id' => 1, 'resep_id' => 3],
-            ['user_id' => 1, 'resep_id' => 4],
-            ['user_id' => 2, 'resep_id' => 1],
+        DB::table('like')->insert([
+            ['user_id' => 1, 'recipe_id' => 3],
+            ['user_id' => 1, 'recipe_id' => 2],
+            ['user_id' => 2, 'recipe_id' => 1],
             // Add the rest of the favorites entries here...
         ]);
     }

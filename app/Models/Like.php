@@ -2,7 +2,10 @@
 
 namespace App\Models;
 
+use App\Models\User;
+use App\Models\Recipe;
 use Illuminate\Database\Eloquent\Model;
+
 
 class Like extends Model
 {
