@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
     {
         // Call each model's individual seeder
         $this->call([
+            ProfilePictureTableSeeder::class,
             UsersTableSeeder::class,
             RecipesTableSeeder::class,
             IngredientsTableSeeder::class,

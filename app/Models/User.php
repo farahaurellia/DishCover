@@ -52,4 +52,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(History::class);
     }
+
+    public function profile()
+    {
+        return $this->hasOne(ProfilePicture::class);
+    }
 }
