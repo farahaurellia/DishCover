@@ -27,8 +27,24 @@ class UserController extends Controller
         return view('/homepage')->with('success', 'You have succesfully created an account');
     }
 
-    public function showHomepage(){
-        return 'logged in';
+    public function showLogin(){
+        return view('login');
     }
+
+    public function login(){
+        $incomingFields = $request->validate([
+            'loginusername' => 'required',
+            'loginpassword' => 'required'
+        ]);
+
+        if(auth()->attempt(['username' => $incomingFields['loginusername'], 'password' => $incomingFields['loginpassword']])){
+            $request->session()->regenerate();
+            return redirect('/')->with('success', 'You have logged in');
+        } else {
+            return redirect('/')->with('failure', 'Invalid login');
+        }
+    }
+
+
     
 }

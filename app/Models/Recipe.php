@@ -47,4 +47,9 @@ class Recipe extends Model
     {
         return $this->belongsToMany(User::class, 'like')->withTimestamps();
     }
+
+    public function images()
+    {
+        return $this->hasOne(Image::class);
+    }
 }

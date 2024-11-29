@@ -5,6 +5,6 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomepageController;
 
 
-Route::get('/', [UserController::class, "showRegister"]);
+//Route::get('/', [HomepageController::class, 'homepage']);
 Route::post('/register', [UserController::class, "register"]);
-Route::get('/homepage', [HomepageController::class, 'index']);
+Route::get('/', [UserController::class, "showLogin"]);

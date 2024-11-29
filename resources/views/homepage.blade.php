@@ -43,6 +43,10 @@
         .recipe-card img {
             width: 100%;
             height: auto;
+            height: 200px;             
+            object-fit: cover;       
+            object-position: center;   
+            border-bottom: 1px solid #ddd;
         }
         .recipe-info {
             padding: 10px;
@@ -66,22 +70,22 @@
             <a href="#">Upload</a>
         </nav>
         <div class="profile">
-            <img src="{{ asset('images/avatar.png') }}" alt="Profile" style="border-radius: 50%; width: 40px;">
+            <a href="#">Profile</a>
         </div>
     </header>
     <main class="main">
         <div class="recipes">
             @foreach ($recipes as $recipe)
                 <div class="recipe-card">
-                    <img src="{{ $recipe['image'] }}" alt="{{ $recipe['name'] }}">
+                    <img src="{{ asset($recipe->image_url) }}" alt="Recipe Image">
                     <div class="recipe-info">
-                        <h3>{{ $recipe['name'] }}</h3>
-                        <p>{{ $recipe['description'] }}</p>
+                        <h3>{{ $recipe->judul}}</h3>
+                        <p>{{ $recipe->deskripsi }}</p>
                         <div class="tags">
-                            <span>{{ $recipe['servings'] }} servings</span>
-                            <span>{{ $recipe['time'] }} minutes</span>
+                            <span>{{ $recipe->porsi }} servings</span>
+                            <span>{{ $recipe->waktu }} minutes</span>
                         </div>
-                        <p>Recipe by {{ $recipe['author'] }}</p>
+                        <p>Recipe by {{ $recipe->user->username }}</p>
                     </div>
                 </div>
             @endforeach

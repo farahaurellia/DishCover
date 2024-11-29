@@ -13,6 +13,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('judul', 200);
             $table->text('deskripsi')->nullable();
+            $table->string('image_url');
             $table->integer('porsi');
             $table->integer('waktu'); // dalam menit
             $table->timestamps();
