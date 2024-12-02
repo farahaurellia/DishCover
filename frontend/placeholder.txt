@@ -1,0 +1,1 @@
+ini biar foldernya bisa dimasukin ke git, nanti apus aja 
